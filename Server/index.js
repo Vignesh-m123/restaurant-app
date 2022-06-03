@@ -3,14 +3,11 @@ const mysql = require('mysql')
 const cors = require('cors')
 const app = express()
 var bodyParser = require('body-parser')
-// const { json } = require('express')
 const port = 5000
 app.use(express.json());
 
 
-// parse various different custom JSON types as JSON
 app.use(cors())
-// app.use(bodyParser.json({ type: 'application/*+json' }))
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
@@ -55,9 +52,6 @@ app.post('/postLocation', (req, res) => {
     console.log(result);
     res.json(result)
   })})
-  //   res.send('Hello World!')
-  // })
-
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
